@@ -2,7 +2,7 @@
  * Created by will on 11/04/19.
  */
 import React from 'react';
-import {AugmentedCurveContext, UserContext, userActions, curveActions, PrimaryButton} from '@giveth/commons-components';
+import {AugmentedCurveContext, UserContext, userActions, curveActions} from '@giveth/commons-components';
 
 const BuyCurveTokens = ({}) => {
   const {state, dispatch} = React.useContext(AugmentedCurveContext);
@@ -32,7 +32,7 @@ const BuyCurveTokens = ({}) => {
       <h2>Current Token Price: {state.tokenPrice}</h2>
       <h2>Current Token Supply: {state.tokenSupply}</h2>
       <input className="eco" value={amount} onChange={(e) => {setAmount(e.target.value)}}/>
-      <PrimaryButton onClick={buyTokens} name="Buy Tokens"/>
+      {/* <PrimaryButton onClick={buyTokens} name="Buy Tokens"/> */}
     </div>
   ) :  (
     <h1>Must Log In to buy tokens</h1>

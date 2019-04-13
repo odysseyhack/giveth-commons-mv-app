@@ -3,8 +3,7 @@ import { defaults, Line } from "react-chartjs-2";
 // import convictionlib from "./convictionlib.js";
 import "./ConvictionVoting.css";
 
-import {getConviction} from '@giveth/commons-components';
-
+import { getConviction } from "@giveth/commons-components";
 
 class Me extends Component {
   constructor(props) {
@@ -12,7 +11,8 @@ class Me extends Component {
 
     this.state = {
       globalparams: props.globalparams,
-      proposal: props.proposal
+      proposal: props.proposal,
+      totalSupply: props.totalSupply
     };
   }
 
@@ -21,11 +21,11 @@ class Me extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    //   debugger;
     this.setState({ globalparams: newProps.globalparams });
     this.recalc();
   }
 
+  // give me a pseudo-random color to paint the lines
   makecolor(i) {
     const r = (i * 139) % 255;
     const g = (i * 251) % 255;
@@ -132,7 +132,10 @@ class Me extends Component {
         <section className="hero is-info welcome is-small">
           <div className="hero-body">
             <div className="container">
-              <h1 className="title">Proposal : {this.state.proposal.name}</h1>
+              <h1 className="title">
+                Proposal : {this.state.proposal.name} - TS :{" "}
+                {this.state.globalparams.totalSupply}{" "}
+              </h1>
             </div>
           </div>
           {/* Alpha= {this.state.alpha / 100}

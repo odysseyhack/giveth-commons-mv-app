@@ -2,7 +2,7 @@
  * Created by will on 10/04/19.
  */
 import React from 'react';
-import { UserContext, userActions, PrimaryButton, DaiAction } from '@giveth/commons-components';
+import { UserContext, userActions, DaiAction } from '@giveth/commons-components';
 
 const User = () => {
   const {state, dispatch} = React.useContext(UserContext);
@@ -18,7 +18,7 @@ const User = () => {
     <div>
       <h1>{state.user.name}</h1>
       <input className="eco" value={amount} onChange={(e) => {setAmount(e.target.value)}}/>
-      <PrimaryButton onClick={spendMoney} name="Spend Money"/>
+      {/* <PrimaryButton onClick={spendMoney} name="Spend Money"/> */}
       <DaiAction buttonName="TEST DAI" actionText="Testing Ecosystem Component Integration"/>
     </div>
   ) :  (
