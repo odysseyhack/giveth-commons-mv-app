@@ -9,7 +9,7 @@ const App = () => {
   return (
     <CommonsStateWrapper>
       <CampaignHeader />
-      <ConvictionVotingContainer className="margin"/>      
+      <ConvictionVotingContainer/>      
     </CommonsStateWrapper>
   );
 };
